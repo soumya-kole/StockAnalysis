@@ -11,7 +11,6 @@ logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %
 
 logger = logging.getLogger(__name__)
 
-
 def fetch_stock_data(symbols, start_date, end_date):
     stocks = []
 
@@ -73,7 +72,6 @@ def plot_correlation_heatmap(correlation_matrix):
     ax.xaxis.set_label_position("top")
     plt.title("Correlation Matrix Heatmap", y=1.08)
     plt.show()
-
 
 def main():
     symbols = ['AAPL']
