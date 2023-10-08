@@ -11,6 +11,7 @@ logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %
 
 logger = logging.getLogger(__name__)
 
+
 def fetch_stock_data(symbols, start_date, end_date):
     stocks = []
 
@@ -35,7 +36,8 @@ def fetch_stock_data(symbols, start_date, end_date):
                     retry_delay = retry_delay * 2
                     logger.debug(f"Sleeping for {retry_delay} seconds")
                     time.sleep(retry_delay)
-            filtered_data = [{'date': pd.to_datetime(d), symbol: round(float(data.get(d)['4. close']),)} for d in date_range if data.get(d)]
+            filtered_data = [{'date': pd.to_datetime(d), symbol: round(float(data.get(d)['4. close']), )} for d in
+                             date_range if data.get(d)]
             df = pd.DataFrame(filtered_data)
             df.set_index("date", inplace=True)
             stocks.append(df)
@@ -72,6 +74,7 @@ def plot_correlation_heatmap(correlation_matrix):
     ax.xaxis.set_label_position("top")
     plt.title("Correlation Matrix Heatmap", y=1.08)
     plt.show()
+
 
 def main():
     symbols = ['AAPL']
