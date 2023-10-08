@@ -5,7 +5,7 @@ This repository contains different analysis on stock data.
 ## Data Source
 https://www.alphavantage.co/
 
-## SQLS
+## Docs
 
-1. [Corelation matrix](docs/correlation.rst)
+1. [Corelation matrix](docs/correlation.md)
 
